@@ -7,6 +7,19 @@
 **_Publisher:_** [Waddah Ali](https://www.kaggle.com/waddahali)
 
 ## Dataset Overview
+**_Data Dictionary_**
+Variable|Description
+---|---
+Customer_ID|Unique identifier for each customer.
+Gender|Reported gender of the customer.
+Region|Geographic territory.
+Subscription_Plan|Current service tier.
+Payment_Method|Most frequent payment method.
+Age|Customer age.
+Days_Since_Last_Login|Time since last activity.
+Customer_Service_Calls|Total support interactions.
+Monthly_Spend|Average monthly revenue
+Churn|Target Variable. 1=Churned, 0=Retained
 
 ### Evironment Setup and Packages
 
