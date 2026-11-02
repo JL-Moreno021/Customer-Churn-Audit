@@ -1,12 +1,12 @@
 # Project Overview
 
-## Revenue Subscription Leak and Churn Analysis: A Logistic Regression and Customer Lifetime Value Analysis Across All Subscription Tiers
+## Subscription Plan Analysis: Identifying Subscription Plan with the Highest Risk and Revenue Loss Share
 
 ## Deliverables
 - Target Variable Analysis
 - Hypothesis Testing
-- Logistic Regession Analysis
-- Customer Lifetime Value Analysis/Evaluation
+- Linear Regession Analysis
+- Churned Customer's Total Revenue Loss 
 - Executive Summary
 
 ## Project Environment
