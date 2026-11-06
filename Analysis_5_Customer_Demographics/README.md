@@ -4,7 +4,15 @@
 ### Project Description
     This project will analyze geographic and demographic cohors in relation to spending behavior. The analysis will include region, gender, age, and payment method.
 ### Testing Approach
-    This project will perform inferential hypothesis testing. A chi-squared test will be used to determine the relationship between target variables and a one-way ANOVA test to determine if there is a statistical significance among groups, given that chi-squared results shows two variables are statistically significant.
+    This project will perform inferential hypothesis testing. Chi squared test and logistic regression is used to determine the relationship of variables.
+### Project Limitations
+* Data
+    - No time information
+    - Unknown source and unusually high churn
+* Analysis
+    - Assiociation Analysis
+    - Limited Set of Variables
+    - No External Validation
 
 ## Project Environment
 ### IDE (Integrated Development Environment)
