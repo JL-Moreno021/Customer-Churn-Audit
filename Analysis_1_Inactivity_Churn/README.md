@@ -1,36 +1,19 @@
 # Project Overview
 
-## Inactivity Churn Analysis : A Logistic Regression Analysis for Identifying Inactivity Churn Tendency
+## Inactivity Churn Analysis : Identifying Inactivity Churn Tendency
+    A behavioral analysis to explore the potential association of customer inactivity with churn
 
-## Deliverables
-- Target Variable Analysis
-- Hypothesis testing
-- Logistic Regression Analysis
-- Executive Summary
+## Project Limitation
+    Customer inactivity (Days Since Last Login) represents the cumulative number of days since a customer's most recent login or recorded activity. It measures customer engagement at the time of data collection but does not independently indicate whether a customer has churned.
+    
+    For this reason, inactivity is analyzed as a behavioral variable to explore its potential association with churn rather than as a definitive measure of customer attrition.
 
 ## Project Question
     How quickly does inactivity turn into churn?
     Is there a threshold where risks jumps?
 
-## Project Environment
-### IDE (Integrated Development Environment)
-    - Visual Studio Code
-
-### Applications
-    - Jupyter Notebook
-
-### Setup and Packages
-
-#### Package Manager
-    - UV
-
-#### Packages
-    - jupyter v.1.1.1
-    - pandas v.3.1.0
-    - numpy v.2.5.4
-    - matplotlib v.3.11.1
-    - seaborn v.0.13.2
-    - statsmodels v.0.15.0
-
-#### Language
-    - Python v.3.14.6
+## Deliverables
+- [Target Variable Analysis](inactivity_churn_analysis.ipynb#analysis-variables)
+- Hypothesis testing
+- Inferential Analysis through Logistic Regression
+- Executive Summary
