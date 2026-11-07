@@ -14,6 +14,5 @@
 
 ## Deliverables
 - [Target Variable Analysis](inactivity_churn_analysis.ipynb#analysis-variables)
-- Hypothesis testing
-- Inferential Analysis through Logistic Regression
-- Executive Summary
+- [Inferential Hypothesis Testing in Logistic Regression](inactivity_churn_analysis.ipynb#performing-hypothesis-testing-in-logistic-regression-and-results-analysis)
+- [Executive Summary](executive_summary.md)
