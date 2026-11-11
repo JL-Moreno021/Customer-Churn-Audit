@@ -1,34 +1,25 @@
-# Project Overview
+# Customer Service Calls and Churn
 
-## Customer Churn Analysis: Evaluating the Impact of Support Interactions Using Controlled Logistic Regression
-
-## Deliverables
-- Target Variable Analysis
-- Hypothesis Testing
-- Logistic Regression Analysis
-- Executive Summary
+A behavioral analysis of how churn changes with the number of customer service calls, with and without accounting for inactivity.
 
 ## Project Questions
-    Do customer service calls signal frustration or engagement?
-    At how many calls should a customer be escalated to retention outreach?
-    Does calls matter independently or overlaps with customer inactivity?
+- Do customer service calls signal frustration or engagement?
+- At how many calls should a customer be escalated to retention outreach?
+- Do calls matter on their own, or do they overlap with inactivity?
 
-## Project Environment
-### IDE (Integrated Development Environment)
-    - Visual Studio Code
+## Project Limitation
+This is a single snapshot per customer, so results show association, not cause or timing. Customers may call because they are about to cancel, so call count may be a result of churn and not only a signal.
 
-### Application(s)
-    - Jupyter Notebook
+## Analyses
+- [Calls vs. churn notebook](../notebooks/03_calls_inactivity_churn_analysis.ipynb)
+  - Churn rate by number of calls
+  - Logistic regression with calls alone
+  - Logistic regression controlling for inactivity (likelihood-ratio test)
+  - Estimated annual revenue lost by call group
+- [Executive summary](../reports/executive_summary_calls.md)
 
-### Setup and Packages
-#### Package Manager
-    - UV
-#### Packages
-    - jupyter v.1.1.1
-    - pandas v.3.1.0
-    - numpy v.2.5.4
-    - matplotlib v.3.11.1
-    - seaborn v.0.13.2
-    - statsmodels v.0.15.0
-#### Language
-    - Python v.3.14.6
+## Key Finding
+Churn rises from 64.6% at 0 calls to 94.8% at 6+ calls, and the association remains after accounting for inactivity.
+
+## Environment
+See the [project README](../README.md#environment).
