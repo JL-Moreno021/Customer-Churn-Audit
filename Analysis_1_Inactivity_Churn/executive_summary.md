@@ -1,17 +1,19 @@
-# Inactivity Churn Analysis : A Logistic Regression Analysis for Identifying Inactivity Churn Tendency
-
-## Deliverables
-- Target Variable Analysis
-- Hypothesis testing
-- Logistic Regression Analysis
-- Executive Summary
+# Executive Summary: Inactivity and Churn
 
 ## Question
-    How quickly does inactivity turn into churn?
-    Is there a threshold where risks jumps?
+    How does churn change with days since a customer's last login, and where does the risk rise the most?
 
-## Results
-| | |
---|--
-**_Initial Findings_**<br>Longer customer inactivity have a higher chance of churning and each 30 days interval increases the total churned by approx. 200 customers|![alt text](images/image.png)![alt text](images/image-1.png)<br>
-**_Hypothesis Results_**<br><br>$H_0$ = The regression coefficient ($β_r$) = 0<br>Customer inactivity has no effect on the log-odds (probability) of customer churn<br>$H_1$ = The regression coefficient ($β_r$) != 0<br>Customer inactivity has effect on the log-odds (probability) of customer churn.<br><br>Customer inactivity shows a positive relationship with churn rate and is strongly significant for all intervals.<br><br>Inverse Transformation Results shows that a 90 days inactivity have the highest churn rate jump. Although 90 Days inactivity shows the highest jump, the baseline churn rate is already high. Therefore, setting the threshold to 30d is the ideal action.<br><br>All of the results rejects the null hypothesis, therefore, we can conclude that customer inactivity has a positive effect on the log-odds of customer churn|![alt text](images/image-2.png)![alt text](images/image-3.png)
+Findings| |
+---|---
+**_Key Findings_**<br><br>- Churn rises with inactivity, from [59.4]% at 0–30 days to [91.8]% at 150–180 days.<br><br>- The largest jump is between [60 and 90] days (+[9] points).<br><br>- The relationship is statistically significant at every inactivity level (p < 0.05), also after accounting for region, gender, and payment method.<br><br>- Churn is already [59.4]% among recently active customers, so inactivity alone does not identify who will leave.|<img src=images/churn_rate_by_days_since_last_login.png>!<img src=images/inference_logit_result.png>
+
+## Recommendation
+    Consider a retention outreach at [30 or 60] days of inactivity. A trigger at 30 days would reach [59.4]% of customers and cover [91.8]% of churners; a trigger at 60 days would reach [59.4]% and cover [91.8]%.
+
+## Limitations
+- The data is a single snapshot, so it shows association, not cause or timing.
+- Inactivity may be partly a result of churn, since customers who leave stop logging in.
+- Churn rates are high across all groups, so results may not generalize to other businesses.
+
+## Details
+See the [full analysis notebook](inactivity_churn_analysis.ipynb) for the statistical tests and methods.
