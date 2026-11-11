@@ -1,23 +1,35 @@
-# Dataset Cleaning
-    This notebook focuses on cleaning and preparing the raw dataset for analysis. It covers standardizing columns, data inspection, handling missing and invalid values, and removing duplicates.
+# Data Cleaning
+Prepares the raw customer churn dataset for analysis and modeling: standardizing column names and text labels, handling invalid and missing values, and removing duplicates.
 
 ## Goal
-    Produce a clean, consistent, and quality dataset for exploratory data analysis and building a machine learning model.
+Produce a consistent, documented dataset for exploratory analysis, statistical testing, and modeling.
+
+## Cleaning Rules
+| Variable | Issue | Rule | Rationale |
+|---|---|---|---|
+| `age` | Values below 18 or above 70 | Set to missing | Subscription products assume adult customers; upper cutoff set at [reason] |
+| `customer_service_calls` | Negative values | Set to missing | A call count cannot be negative |
+| `monthly_spend` | Negative values; values above 311.39 | Set to missing | Spend cannot be negative; cutoff set at [reason] |
+| Text columns | Inconsistent case, spaces | Lowercase, strip, replace spaces with `_` | Consistent categories |
+| All rows | Duplicate records | Drop after all other fixes | Duplicates can appear after standardizing |
 
 ## Data Limitations
-* _Age restrictions_
-    - The dataset may contain age values outside the intended customer demographic or target population.
+- **Unverified accuracy:** no external source is available to validate the records.
+- **Unknown source:** the dataset's origin is not documented, and churn rates are unusually high, so it may be synthetic.
+- **Assumed time scale:** `monthly_spend` is assumed to be monthly.
+- **Missing values:** rows with missing values are dropped per analysis, not here.
 
-* _Missing time-scale information_
-    - Some variables lack clear time-scale definitions (e.g., monthly or annual), making direct comparisons difficult.
-    
-* _Lack of external validation data_
-    - No external data sources are available to independently verify the accuracy of the recorded information.
+## How Limitations Were Handled
+- **Invalid values:** set to missing instead of deleted, so rows keep their other information.
+- **Plausible values:** kept as recorded.
+- **Dropped rows:** missing-value rows are compared with complete rows (see the final section) to check for bias.
 
-### Limitation Address
-* _Age Restrictions_
-    - Minimum age set to `18`; age restriction assumption for subscription type products/services.
-* Inconsistent Time Scales
-    - Convert applicable variables from annual to monthly values, and vice versa, to establish a consistent time scale for analysis.
-* Lack of external validation data
-    - Retain the original values while acknowledging that the dataset's accuracy cannot be independently verified using external sources.
+## Summary of Changes
+|Variable|Changes|
+---|---
+`age`|9267 records => 8718
+`customer service calls`|10300 => 10248
+`monthly spend`| 9786 => 9715
+`Text columns`|converted to snake_case
+`Categorical Data`|`gender`: lower case<br>`region`: 8 => 4 lower case<br>`subscription plan`: 6 => 3 lower case<br>`payment method`: 9786 => 9575
+`dupilcate records`|300 records dropped
