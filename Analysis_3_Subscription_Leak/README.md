@@ -1,30 +1,20 @@
-# Project Overview
+# Subscription Plans and Revenue Lost to Churn
 
-## Subscription Plan Analysis: Identifying Subscription Plan with the Highest Risk and Revenue Loss Share
+Which subscription plan loses the most revenue to churn, and what share of the total does each plan account for?
 
-## Deliverables
-- Target Variable Analysis
-- Hypothesis Testing
-- Linear Regession Analysis
-- Churned Customer's Total Revenue Loss 
-- Executive Summary
+## Analyses
+- [Subscription plan notebook](../notebooks/06_subscription_revenue_leak_analysis.ipynb)
+  - Churn rate and spend by plan
+  - Zero-spend customer profile
+  - Linear regression: does spend differ by plan?
+  - Monthly revenue lost to churn by plan
+- [Executive summary](../reports/executive_summary_subscription.md)
 
-## Project Environment
-### IDE (Integrated Development Environment)
-    - Visual Studio Code
+## Key Finding
+    Plus accounts for the largest share of monthly revenue lost to churn (39%) despite having the lowest churn rate. Basic has the highest churn rate but the smallest loss share (25%).
 
-### Application(s)
-    - Jupyter Notebook
+## Project Limitation
+    Single snapshot per customer; zero-spend customers are excluded from revenue figures. See the executive summary for details.
 
-### Setup and Packages
-#### Package Manager
-    - UV
-#### Packages
-    - jupyter v.1.1.1
-    - pandas v.3.1.0
-    - numpy v.2.5.4
-    - matplotlib v.3.11.1
-    - seaborn v.0.13.2
-    - statsmodels v.0.15.0
-#### Language
-    - Python v.3.14.6
+## Environment
+See the [project README](../README.md#environment).

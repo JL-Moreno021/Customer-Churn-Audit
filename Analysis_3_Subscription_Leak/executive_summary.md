@@ -1,12 +1,20 @@
-# Subscription Plan Analysis: Identifying Subscription Plan with the Highest Risk and Revenue Loss Share
-
-## Overview
-    This project analyze the dataset to determine the attrition per subscription plan and determine the revenue loss and percent loss due to customer churns. The project includes a linear regression model to determine if the revenue vary across all subscription plan.
+# Executive Summary: Subscription Plans and Revenue Lost to Churn
 
 ## Question
-* Which subscription plans are the leakiest, and are they worth saving?
+    Which subscription plan loses the most revenue to churn, and what share of the total does each plan account for?
 
-## Results
+## Key Findings
 | | |
 ---|---
-**_Initial Findings_**<br>Retained customers spends more than churned customers<br><br>**_Hypothesis Testing_**<br>The results shows that there is a significant relationship between `monthly_spend` and `subscription_plan`, which indicates that revenue vary across all tiers.<br><br>**_Analysis Results_**<br>_Zero Spenders_<br>Zero spenders are customer who haven't paid any amount. Majority of zero spenders are in `Basic` plan and are equally distributed across all regions, while few are in the `Pro` plan.<br>Results also shows that almost all of the zero spenders are already churned and 75% are already inactive for more than 30 days across all subscription plan and region.<br><br>**_Non Zero Spenders_**<br>Basic plan have the lowest revenue with $45, followed by Pro plan with $40 more than Basic or $85 in total, then Plus plan with the highest average monthly revenue of $110 more than Basic plan or $150 in total.<br><br>**_Monthly Total Loss_**<br>Plus is the leakiest plan with a total share loss of 39%, generating a total loss of $204k from churned customers. Pro plan on the other hand have a total share loss of 36% and a total generated loss of $189k from churned customers.|![alt text](images/image-1.png)![alt text](images/image.png)![alt text](images/image-2.png)![alt text](images/image-3.png)
+|**Plus loses the most revenue**<br>- (39%, about _$204K_ per month), followed by Pro (36%, about _$189K_) and Basic (25%, about _$128K_).<br><br>**The ranking differs by metric.**<br>- Basic has the highest churn rate (80%), but its customers pay the least (about _$45_ a month), while Plus has the lowest churn rate but the highest spend (about _$150_).<br><br>**Retained customers spend more than churned customers** in every plan.<br><br>**Zero-spend customers** are mostly on Basic. [79–86]% of them have churned, and they are excluded from the revenue figures.|![Monthly revenue lost to churn by plan](images/plan_revenue_loss.png)![Plan spending (Retained vs Churned)](images/plan_spend_0_1.png)
+## Recommendation
+    Prioritize retention for Plus: each churned Plus customer costs about [3.3] times as much as a Basic customer, and Plus accounts for the largest loss share with the fewest subscribers. Whether retention is worth it depends on the cost of retaining a customer, which this data doesn't include.
+
+## Limitations
+- The data is a single snapshot, so it shows association, not cause.
+- Revenue lost = average monthly spend × churned customers per plan. It is a monthly estimate and assumes churned customers paid the plan average.
+- Zero-spend customers are excluded. If their spend was zeroed after churn, losses are understated.
+- Churn is high across all plans, so results may not generalize.
+
+## Details
+See the [full analysis notebook](../notebooks/06_subscription_revenue_leak_analysis.ipynb).
