@@ -20,3 +20,6 @@
 
 ## Key Finding
     Churn rises from 59.4% at 0–30 days to 91.8% at 150–180 days, with the largest jump between 60 and 90 days (+[9] points)
+
+## Environment
+See the [project README](../README.md#environment).
