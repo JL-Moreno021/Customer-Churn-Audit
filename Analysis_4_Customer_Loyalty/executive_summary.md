@@ -1,13 +1,28 @@
-# Customer Loyalty Prediction: Modeling the Relationship Between Spending Patterns and Customer Loyalty
-    This project aims to diagnose customer loyalty based on spending behavior and if this holds across all subscription plan.
-    
-## The Problem
-    Previous analysis shows that there is a negative effect between customer churn and revenue. This project will explore the data to determine if spending behavior translates to loyalty or a proxy to subscription plan.
+# Executive Summary: Spending and Customer Loyalty
 
-## The Solution
-    * The data team will perform a logistic regression model to determine if spending behavior have a significant effect on customer churn and if it is still significant under controlled environment.
+## Question
 
-## Results
+    Are higher-spending customers more likely to stay, and does this hold after accounting for subscription plan?
+
+    Loyalty means the customer is retained (not churned).
+
+## Key Findings
 | | |
 ---|---
-**_Initial FIndings_**<br>Retained customers spends an average of `$5`-`$10` higher than churned customers.<br>High total revenue loss due to churn is mainly driven by its large proportion to the total population.<br>Customer churn probability lowers as Monthly Spending increases.<br><br>**_Hypothesis Testing_**<br>Monthly Spending remains significant on both isolated and controlled test, indicating that Spending Behavior is the main driver of customer churn.<br><br><img src='images/image-2.png'><br><br><img src='images/image-4.png'>|<img src='images/image.png' width='80%'> <img src='images/image-1.png' width='70%'>
+Retained customers spend $5–$10 more per month than churned customers.<br><br>Churn falls as spend rises, from about [83]% in the lowest spend group to about [66]% in the highest.<br><br>The association holds after accounting for subscription plan (p < 0.05), so spend is not just a proxy for plan. Each extra $10 of monthly spend goes with [5.7]% lower odds of churn.<br><br>[Plan also / does not add information once spend is known.]|<img src='images/avg_rev_per_sub.png'><img src='images/churn_spend_reg.png'><img src='images/c_model.png'><img src='images/lr_test.png'>
+
+## Recommendation
+ 
+    Treat spend as a retention signal, for example to prioritize which customers get outreach. 
+    
+    Note: Raising customer's spend does not assume lower churn counts.
+    
+
+## Limitations
+- The data is a single snapshot, so it shows association, not cause.
+- Customers who are about to leave may spend less beforehand, so lower spend may be a result of churn.
+- Zero-spend customers (mostly churned) are excluded.
+- Churn is high in every group, so results may not generalize.
+
+## Details
+See the [full analysis notebook](../notebooks/05_customer_loyalty_analysis.ipynb).
