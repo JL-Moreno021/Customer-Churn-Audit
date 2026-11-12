@@ -1,28 +1,17 @@
-# Customer Loyalty Prediction: Modeling the Relationship Between Spending Patterns and Customer Loyalty
+# Spending and Customer Loyalty
 
-## Overview
-    This project is a modeling analysis to predict if customer spending leads is equivalent to loyalty or revenue is already determined based on customer's subscription plan. This project will utilize logistic regression model to determine if revenue is a predicting variable of customer retention or is a proxy to subscription plan.
+    Are higher-spending customers more likely to stay, and is spend just a proxy for subscription plan?
 
 ## Deliverables
-- Target Vairable Analysis
-- Hypothesis Testing
-- Logistic Regression Analysis
-- Executive Summary
+- [Analysis notebook](customer_loyalty_analysis.ipynb): spend and churn by plan, hypothesis tests (isolated and plan-controlled logistic regression)
+- [Executive summary](executive_summary.md): findings and recommendation for a non-technical reader
+- [Charts](./images): average and total revenue by plan and churn status, churn probability vs. spend
 
-## Project Environment
-### IDE (integrated Development Environment)
-    - Visual Studio Code
-### Application(s)
-    - Jupyter Notebook
-### Setup and Packages
-#### Package Manager
-    - UV
-#### Packages
-    - jupyter v.1.1.1
-    - pandas v.3.1.0
-    - numpy v.2.5.4
-    - matplotlib v.3.11.1
-    - seaborn v.0.13.2
-    - statsmodels v.0.15.0
-#### Language
-    - Python v.3.14.6
+## Key Finding
+    Higher spend is associated with lower churn, and the association remains after accounting for subscription plan: each extra $10 of monthly spend goes with about 5.7% lower odds of churn.
+
+## Project Limitation
+    Single snapshot per customer, so results show association, not cause. Lower spend may be a result of churn, and zero-spend customers are excluded.
+
+## Environment
+See the [project README](../README.md#environment).
