@@ -1,33 +1,24 @@
-# Profiling the Consumer: Analyzing Behavioral Patterns Across Demographic Cohorts
+# Customer Demographics and Churn
+    Are region, payment method, age, or gender associated with customer churn?
 
-## Project Overview
-### Project Description
-    This project will analyze geographic and demographic cohors in relation to spending behavior. The analysis will include region, gender, age, and payment method.
-### Testing Approach
-    This project will perform inferential hypothesis testing. Chi squared test and logistic regression is used to determine the relationship of variables.
-### Project Limitations
-* Data
-    - No time information
-    - Unknown source and unusually high churn
-* Analysis
-    - Assiociation Analysis
-    - Limited Set of Variables
-    - No External Validation
+## Deliverables
+- [Analysis notebook](customer_demographics_and_spending.ipynb): chi-squared tests, age logistic regression, region likelihood-ratio test, regional churn rates, effect size
+- [Executive summary](executive_summary.md): findings and recommendation for a non-technical reader
 
-## Project Environment
-### IDE (Integrated Development Environment)
-    - Visual Studio Code
-### Application(s)
-    - Jupyter Notebook
-### Setup and Packages
-#### Package Manager
-    - UV
-#### [Packages](../pyproject.toml)
-    - jupyter v.1.1.1
-    - pandas v.3.1.0
-    - numpy v.2.5.4
-    - matplotlin v.3.11.1
-    - seaborn v.0.13.2
-    - statsmodels v.0.15.0
-#### Language
-    - Python v.3.14.6
+## Testing Approach
+- **Chi-squared tests of independence** for region, gender, and payment method.
+- **Logistic regression** for age.
+- **Likelihood-ratio test** to check whether region still matters after accounting for monthly spend, support calls, inactivity, and age.
+- **Cramér's V** to measure how strong the region association is.
+
+## Key Finding
+Only region is associated with churn (71.5% in the East to 79.1% in the South), and the effect is very weak (Cramér's V = 0.066).
+
+## Project Limitations
+- **Data:** single snapshot with no time information; unknown source and unusually high churn; about a quarter of customers excluded for missing values.
+- **Analysis:** shows association, not cause; limited set of variables; no external validation.
+
+## Environment
+- Python with Jupyter Notebook in Visual Studio Code, managed with [uv](https://docs.astral.sh/uv/)
+- Libraries: pandas, numpy, scipy, statsmodels, matplotlib, seaborn
+- Exact versions are pinned in [`pyproject.toml`](../pyproject.toml)
