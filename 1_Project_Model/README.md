@@ -35,7 +35,7 @@
 ## Results
 | | |
 --|--
-Logistic regression's 5-fold cross-validation ROC AUC on the training set is 0.744 (XGBoost: [0.735]).![alt text](images/image-2.png)<br><br>Logistic regression scores within 0.013 of itself on every metric between validation and test, so there is no sign of overfitting.|![alt text](images/image.png)![alt text](images/image-1.png)![alt text](images/image-3.png)
+Logistic regression's 5-fold cross-validation ROC AUC on the training set is 0.744 (XGBoost: [0.735]).<br><img src='images/image-2.png' width=50%><br><br>Logistic regression scores within 0.013 of itself on every metric between validation and test, so there is no sign of overfitting.|<img src='images/image.png' width=50%><img src='images/image-1.png' width=50%><img src='images/image-3.png' width=50%>
 
 ## Model Selection
     Logistic Regression is the selected model because of negligible ROC-AUC difference from XGBoost [ROC-AUC: 0.0086] and is simpler and connects to the previous analysis.
